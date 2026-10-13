@@ -9,6 +9,11 @@ $env:HF_HUB_OFFLINE = '1'
 $env:TRANSFORMERS_OFFLINE = '1'
 $url = 'http://127.0.0.1:8765'
 try { $health = Invoke-RestMethod "$url/api/health" -TimeoutSec 2 } catch { $health = $null }
+if ($health.ready -and (($health.version -ne '0.2') -or ($health.release_root -ne $releaseRoot))) {
+    Invoke-RestMethod "$url/api/shutdown" -Method Post -ContentType 'application/json' -Body '{}' | Out-Null
+    Start-Sleep -Seconds 2
+    $health = $null
+}
 if (-not $health.ready) {
     $runArgs = @('-m', 'scentbridge.server', '--model', ('"' + (Join-Path $releaseRoot 'scentbridge-q8.gguf') + '"'), '--catalog', ('"' + (Join-Path $releaseRoot 'catalog.json') + '"'), '--ui', ('"' + (Join-Path $releaseRoot 'app/index.html') + '"'))
     Start-Process -FilePath $runPython -ArgumentList $runArgs -WorkingDirectory $releaseRoot -WindowStyle Hidden -RedirectStandardOutput (Join-Path $releaseRoot 'server.log') -RedirectStandardError (Join-Path $releaseRoot 'server-errors.log') | Out-Null

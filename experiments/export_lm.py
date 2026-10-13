@@ -8,6 +8,8 @@ from peft import PeftModel
 def main():
     p=argparse.ArgumentParser();p.add_argument('--base',type=Path,required=True);p.add_argument('--training',type=Path,required=True)
     p.add_argument('--data',type=Path,required=True);p.add_argument('--approved-data',type=Path,required=True);p.add_argument('--out',type=Path,required=True)
+    p.add_argument('--name',default='ScentBridge-LM-0.1')
+    p.add_argument('--decoder',type=Path)
     args=p.parse_args();report=json.loads((args.training/'training-report.json').read_text())
     checkpoint=args.training/f"checkpoint-{report['selected_step']}";args.out.mkdir(parents=True,exist_ok=True)
     model=AutoModelForCausalLM.from_pretrained(args.base,torch_dtype=torch.bfloat16,local_files_only=True)
@@ -25,6 +27,7 @@ def main():
     shutil.copy2(args.training/'training-report.json',args.out/'training-report.json')
     shutil.copy2(args.data/'manifest.json',args.out/'training-data-manifest.json')
     shutil.copy2(args.data/'catalog.json',args.out/'catalog.json')
+    if args.decoder:shutil.copy2(args.decoder,args.out/'formula-decoder.json')
     # Compact runtime registry; the full provenance remains in the separate data package.
     with (args.out/'registered-formulas.jsonl').open('w',encoding='utf-8') as dest:
         for l in (args.approved_data/'derived/formulas.jsonl').open(encoding='utf-8'):
@@ -35,7 +38,7 @@ def main():
     shutil.copytree(repo/'app',args.out/'app',dirs_exist_ok=True)
     shutil.copy2(repo/'requirements-lm.txt',args.out/'requirements.txt')
     shutil.copy2(repo/'configs/requirements-local.lock.txt',args.out/'requirements-local.lock.txt')
-    manifest={'model_name':'ScentBridge-LM-0.1','base':'Qwen/Qwen3-0.6B','revision':report['base_revision'],
+    manifest={'model_name':args.name,'base':'Qwen/Qwen3-0.6B','revision':report['base_revision'],
       'modified_by':'ScentBridge local LoRA fine-tuning','merged_parameters':model.num_parameters(),
       'format':'safetensors','dtype':'bfloat16','standalone_merged_model':True,'selected_step':report['selected_step']}
     (args.out/'export-manifest.json').write_text(json.dumps(manifest,indent=2),encoding='utf-8')

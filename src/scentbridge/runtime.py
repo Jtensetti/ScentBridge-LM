@@ -14,6 +14,7 @@ def formula_key(p):
 
 class Catalog:
     def __init__(self,path):
+        self.path=Path(path)
         self.rows=json.loads(Path(path).read_text(encoding='utf-8'))
         self.by_prior={r['prior_id']:r for r in self.rows}
         self.exact={formula_key(components(r)):r for r in self.rows}
@@ -94,7 +95,7 @@ class NativeLanguageModel:
             self.device='llama.cpp CUDA' if gpu else 'llama.cpp CPU'
             self.log=(self.path.parent/'native-runtime.log').open('w',encoding='utf-8')
             args=[str(exe),'-m',str(self.path),'--host','127.0.0.1','--port',str(port),
-              '-c','2048','-np','1','-t','4','-ngl','99' if gpu else '0','--reasoning','off','--no-webui']
+              '-c','4096','-np','1','-t','4','-ngl','99' if gpu else '0','--reasoning','off','--no-webui']
             self.process=subprocess.Popen(args,stdout=self.log,stderr=subprocess.STDOUT,
               creationflags=getattr(subprocess,'CREATE_NO_WINDOW',0))
             for _ in range(120):
@@ -115,9 +116,16 @@ class NativeLanguageModel:
         if hasattr(self,'log') and not self.log.closed:self.log.close()
 
     def generate(self,chat,max_new_tokens=384):
+        return self._generate(chat,max_new_tokens)
+
+    def generate_structured(self,chat,schema,max_new_tokens=384):
+        return self._generate(chat,max_new_tokens,schema)
+
+    def _generate(self,chat,max_new_tokens=384,schema=None):
         if len(json.dumps(chat,ensure_ascii=False))>16000:raise ValueError('Förfrågan är för lång.')
         payload={'messages':chat,'max_tokens':max_new_tokens,'temperature':0,'top_p':1,'seed':20261013,
           'chat_template_kwargs':{'enable_thinking':False},'stream':False}
+        if schema is not None:payload['response_format']={'type':'json_object','schema':schema}
         req=self.urllib.Request(self.url+'/v1/chat/completions',data=json.dumps(payload).encode(),headers={'Content-Type':'application/json'})
         started=time.perf_counter()
         with self.urllib.urlopen(req,timeout=180) as r:result=json.load(r)
@@ -134,6 +142,9 @@ class Assistant:
     def __init__(self,model,catalog):self.lm=model;self.catalog=catalog
 
     def respond(self,request):
+        if request.get('task')=='create_recipe':
+            from .creative import RecipeDesigner
+            return RecipeDesigner(self.lm,self.catalog).respond(request)
         task=request.get('task','text_to_formula');text=str(request.get('text','')).strip()
         if len(text)>2000:raise ValueError('Beskrivningen får vara högst 2 000 tecken.')
         if task not in {'text_to_formula','formula_to_text'}:raise ValueError('Okänd uppgift.')

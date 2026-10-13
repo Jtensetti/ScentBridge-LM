@@ -22,8 +22,9 @@ def main():
             if not self.valid_host():self.reply(403,{'error':'Invalid host'});return
             if self.path=='/':self.reply(200,args.ui.read_bytes(),'text/html; charset=utf-8')
             elif self.path=='/api/catalog':self.reply(200,{'accords':[{'id':r['prior_id'],'name':r['name_sv']} for r in catalog.rows],
-                'materials':catalog.materials,'registered_formulas':len(catalog.exact),'model':'ScentBridge-LM 0.1'})
-            elif self.path=='/api/health':self.reply(200,{'ready':True,'device':assistant.lm.device})
+                'materials':catalog.materials,'registered_formulas':len(catalog.exact),'model':'ScentBridge 0.2 — receptverkstad'})
+            elif self.path=='/api/health':self.reply(200,{'ready':True,'device':assistant.lm.device,'version':'0.2',
+                'release_root':str(args.model.resolve().parent)})
             else:self.reply(404,{'error':'Not found'})
         def do_POST(self):
             origin=self.headers.get('Origin')

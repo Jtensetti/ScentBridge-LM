@@ -1,0 +1,58 @@
+{
+  "version": "0.2",
+  "status": "working_recipe_prototype_not_sensory_validated",
+  "language_model": {
+    "model": "scentbridge-q8.gguf",
+    "held_out_intent_rows": 12,
+    "exact_intent": 8,
+    "facet_sets_correct": 8,
+    "acceptance_cases": 12,
+    "acceptance_passed": 12,
+    "sensory_quality_tested": false,
+    "decoder": "learned_synthetic_decoder",
+    "target_in_encoder_prompt": false
+  },
+  "synthetic_pairs": {
+    "pairs": 6000,
+    "unique_descriptions": 6000,
+    "unique_formulas": 6000,
+    "sensory_status": "synthetic_not_smell_tested",
+    "user_approval_inherited": false,
+    "seed": 20261013,
+    "split_unit": "unordered_set_of_odor_facets_all_ratios_grouped",
+    "cross_split_group_overlap": 0,
+    "decoder_fit_rows": 4816,
+    "decoder_parameters": 156,
+    "decoder_fit_rank": 51,
+    "metrics": {
+      "train": {
+        "rows": 4816,
+        "mean_absolute_percentage_point_error": 2.4767628461827824e-05,
+        "max_absolute_percentage_point_error": 0.0007934394860532323
+      },
+      "validation": {
+        "rows": 583,
+        "mean_absolute_percentage_point_error": 2.438799756916834e-05,
+        "max_absolute_percentage_point_error": 0.0007695809526193642
+      },
+      "test": {
+        "rows": 601,
+        "mean_absolute_percentage_point_error": 2.4560115987410972e-05,
+        "max_absolute_percentage_point_error": 0.0007934394860532323
+      }
+    },
+    "test_used_for_fitting": false,
+    "direct_lm_sft_rows": 12000,
+    "direct_lm_sft_status": "prepared_not_trained; deployed decoder is the fitted sparse linear specialist",
+    "corpus_sha256": "7cdf04c6fba821e61b390b5b3e64f9274988e3cc7169dbc4b6c46fe3e8f847ad",
+    "limitation": "Synthetic reconstruction accuracy measures fidelity to authored mixing rules, not real smell quality or empirical generalization."
+  },
+  "language_training": {
+    "examples": 755,
+    "selected_step": 240,
+    "validation_rows": 61,
+    "validation_loss": 0.05608384356315744,
+    "seconds": 874.0779709001072
+  },
+  "software_unit_tests": 35
+}

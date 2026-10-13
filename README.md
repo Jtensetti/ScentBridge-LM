@@ -6,7 +6,9 @@ Project repository: [Jtensetti/ScentBridge-LM](https://github.com/Jtensetti/Scen
 
 ## Status — 2026-10-13
 
-**ScentBridge-LM 0.1 is a locally trained generative language model**, based on Qwen3-0.6B, with standalone merged weights and a Swedish local application. It supports grounded text/formula responses using 39 starting accords and exact lookup of 4,992 approved formulas, with deterministic mass calculations. See [the language-model release](docs/language-model-0.1.md) for training, evaluation and scope. Model files and the application bundle are delivered locally; this repository contains the reproducible code.
+**ScentBridge 0.2 now turns a free odor brief into a new recipe hypothesis.** The local Swedish interface supports accord and perfume drafts, new material suggestions, adjustable odor directions, exact weighing plans and recipe exports. A newly fine-tuned language encoder extracts odor intent without receiving an answer formula. A sparse formula decoder is trained on 4,816 of 6,000 synthetic description/recipe pairs derived from catalog accords and authored design priors. See [the recipe designer](docs/creative-recipes-0.2.md) for the architecture and its limits. This is a working prototype, not a sensory-validated general perfumer.
+
+Version 0.1 remains a catalog-copy baseline. Its prompts supplied the reference answer; its accuracy did not demonstrate new recipe generation. See [the earlier language-model report](docs/language-model-0.1.md).
 
 The earlier E1 experiment learned a small text/formula retrieval embedding but achieved **0% on unseen test families**. That negative result remains valid: the new release uses catalog grounding and does not claim a solution to blind olfactory prediction. See [the quantitative intake and E1 report](docs/quantitative-intake-and-e1.md).
 
@@ -31,7 +33,7 @@ Begin with a versioned material registry, licensed observations, a shared percep
 
 The first model stack is Python + NumPy for the CPU baseline, then PyTorch + Transformers/PEFT for a small language benchmark. TRL is the selected post-training interface when needed; do not layer Soup and Unsloth on top by default. XGrammar enters with generative formulas. Keep OpenPOM in a separate environment if its molecular features improve results.
 
-The implemented language-model baseline uses PyTorch/Transformers/PEFT with local LoRA training and checked JSON output. The interface retrieves approved catalog references and visibly falls back to the catalog if model output deviates. Free generation remains available separately through `python -m scentbridge.cli --raw`; it is not catalog-validated.
+The recipe interface uses local LoRA language interpretation, schema-constrained output, explicit odor-direction controls and deterministic recipe arithmetic. Approved reference lookup remains separate. Novel mixtures always retain their untested status; no target formula is supplied to the creative language encoder.
 
 ## Run the initial smoke experiment
 
