@@ -2,7 +2,7 @@
 
 A compact olfactory model for **odor description → perfume formula** and **perfume formula → odor description**, connected through a shared, nonlinguistic olfactory representation.
 
-Project repository: [Jtensetti/parfumeLM](https://github.com/Jtensetti/parfumeLM).
+Project repository: [Jtensetti/ScentBridge-LM](https://github.com/Jtensetti/ScentBridge-LM).
 
 ## Status — 2026-10-13
 
