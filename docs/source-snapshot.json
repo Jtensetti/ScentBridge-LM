@@ -1,0 +1,269 @@
+{
+  "review_date": "2026-10-13",
+  "method": "GitHub repository API metadata and current README; linked official docs/model cards. No upstream training or inference executed. Pushed_at is repository activity, not necessarily date of inspected default-branch commit. License API labels are preliminary; narrative review records exceptions.",
+  "repositories": [
+    {
+      "repo": "BioMachineLearning/openpom",
+      "default_branch": "main",
+      "pushed_at": "2025-10-17T14:50:39Z",
+      "archived": false,
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdx_id": "MIT",
+        "url": "https://api.github.com/licenses/mit",
+        "node_id": "MDc6TGljZW5zZTEz"
+      },
+      "readme_url": "https://github.com/BioMachineLearning/openpom/blob/main/README.md",
+      "sha": "5434c4b7badebca8e7d180aa34d2f787402121ee"
+    },
+    {
+      "repo": "Dao-AILab/flash-attention",
+      "default_branch": "main",
+      "pushed_at": "2026-10-13T05:41:11Z",
+      "archived": false,
+      "license": {
+        "key": "bsd-3-clause",
+        "name": "BSD 3-Clause \"New\" or \"Revised\" License",
+        "spdx_id": "BSD-3-Clause",
+        "url": "https://api.github.com/licenses/bsd-3-clause",
+        "node_id": "MDc6TGljZW5zZTU="
+      },
+      "readme_url": "https://github.com/Dao-AILab/flash-attention/blob/main/README.md",
+      "sha": "1fc0221183e799363001394a12dd9e78e15f5dda"
+    },
+    {
+      "repo": "ggml-org/llama.cpp",
+      "default_branch": "master",
+      "pushed_at": "2026-10-13T07:26:53Z",
+      "archived": false,
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdx_id": "MIT",
+        "url": "https://api.github.com/licenses/mit",
+        "node_id": "MDc6TGljZW5zZTEz"
+      },
+      "readme_url": "https://github.com/ggml-org/llama.cpp/blob/master/README.md",
+      "sha": "071b553fb1d3a1b76c0b12ab9a1546714cafe4e1"
+    },
+    {
+      "repo": "huggingface/trl",
+      "default_branch": "main",
+      "pushed_at": "2026-10-13T07:14:14Z",
+      "archived": false,
+      "license": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "spdx_id": "Apache-2.0",
+        "url": "https://api.github.com/licenses/apache-2.0",
+        "node_id": "MDc6TGljZW5zZTI="
+      },
+      "readme_url": "https://github.com/huggingface/trl/blob/main/README.md",
+      "sha": "f2ef1e0e89541c6432ff844376f1e16f1433ec7c"
+    },
+    {
+      "repo": "linkedin/Liger-Kernel",
+      "default_branch": "main",
+      "pushed_at": "2026-10-11T17:26:56Z",
+      "archived": false,
+      "license": {
+        "key": "bsd-2-clause",
+        "name": "BSD 2-Clause \"Simplified\" License",
+        "spdx_id": "BSD-2-Clause",
+        "url": "https://api.github.com/licenses/bsd-2-clause",
+        "node_id": "MDc6TGljZW5zZTQ="
+      },
+      "readme_url": "https://github.com/linkedin/Liger-Kernel/blob/main/README.md",
+      "sha": "23ba1065a70ff8cd445a2077d607b17ac11df7cb"
+    },
+    {
+      "repo": "MakazhanAlpamys/Soup",
+      "default_branch": "main",
+      "pushed_at": "2026-10-12T18:51:00Z",
+      "archived": false,
+      "license": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "spdx_id": "Apache-2.0",
+        "url": "https://api.github.com/licenses/apache-2.0",
+        "node_id": "MDc6TGljZW5zZTI="
+      },
+      "readme_url": "https://github.com/MakazhanAlpamys/Soup/blob/main/README.md",
+      "sha": "5349282ef22d1d6bece5e88fdfaf9689f2c538b4"
+    },
+    {
+      "repo": "microsoft/olfaction",
+      "default_branch": "main",
+      "pushed_at": "2026-10-06T16:23:08Z",
+      "archived": false,
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdx_id": "MIT",
+        "url": "https://api.github.com/licenses/mit",
+        "node_id": "MDc6TGljZW5zZTEz"
+      },
+      "readme_url": "https://github.com/microsoft/olfaction/blob/main/README.md",
+      "sha": "0b8bd710509d50310e8c45396301e22eebbc8f69"
+    },
+    {
+      "repo": "mlc-ai/pith-train",
+      "default_branch": "main",
+      "pushed_at": "2026-10-09T14:58:17Z",
+      "archived": false,
+      "license": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "spdx_id": "Apache-2.0",
+        "url": "https://api.github.com/licenses/apache-2.0",
+        "node_id": "MDc6TGljZW5zZTI="
+      },
+      "readme_url": "https://github.com/mlc-ai/pith-train/blob/main/README.md",
+      "sha": "87208d9e43167574cef4ed260e90b8f62b5ec79e"
+    },
+    {
+      "repo": "mlc-ai/xgrammar",
+      "default_branch": "main",
+      "pushed_at": "2026-10-13T03:23:47Z",
+      "archived": false,
+      "license": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "spdx_id": "Apache-2.0",
+        "url": "https://api.github.com/licenses/apache-2.0",
+        "node_id": "MDc6TGljZW5zZTI="
+      },
+      "readme_url": "https://github.com/mlc-ai/xgrammar/blob/main/README.md",
+      "sha": "f294c51e16f6b100d4f5fbe46889169db5c4872d"
+    },
+    {
+      "repo": "odor-pair/odor-pair",
+      "default_branch": "main",
+      "pushed_at": "2025-10-01T17:38:14Z",
+      "archived": false,
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdx_id": "MIT",
+        "url": "https://api.github.com/licenses/mit",
+        "node_id": "MDc6TGljZW5zZTEz"
+      },
+      "readme_url": "https://github.com/odor-pair/odor-pair/blob/main/README.md",
+      "sha": "6e2b4967eaeb7a9fd268a86e9c6e3ad3a704b12a"
+    },
+    {
+      "repo": "pyrfume/pyrfume-data",
+      "default_branch": "main",
+      "pushed_at": "2025-09-25T13:28:15Z",
+      "archived": false,
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdx_id": "MIT",
+        "url": "https://api.github.com/licenses/mit",
+        "node_id": "MDc6TGljZW5zZTEz"
+      },
+      "readme_url": "https://github.com/pyrfume/pyrfume-data/blob/main/README.md",
+      "sha": "8054ea98ed675005ec10e67359902f500e4911b0"
+    },
+    {
+      "repo": "pyrfume/pyrfume",
+      "default_branch": "main",
+      "pushed_at": "2025-09-09T19:06:33Z",
+      "archived": false,
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdx_id": "MIT",
+        "url": "https://api.github.com/licenses/mit",
+        "node_id": "MDc6TGljZW5zZTEz"
+      },
+      "readme_url": "https://github.com/pyrfume/pyrfume/blob/main/README.md",
+      "sha": "bd5159b28439e8e9460755c59009472ed46cbcaa"
+    },
+    {
+      "repo": "RightNow-AI/TIDE",
+      "default_branch": "main",
+      "pushed_at": "2026-09-18T01:19:45Z",
+      "archived": false,
+      "license": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "spdx_id": "Apache-2.0",
+        "url": "https://api.github.com/licenses/apache-2.0",
+        "node_id": "MDc6TGljZW5zZTI="
+      },
+      "readme_url": "https://github.com/RightNow-AI/TIDE/blob/main/README.md",
+      "sha": "8bdc187d2a66738871133537e6cb74f3d05990a6"
+    },
+    {
+      "repo": "SafeAILab/EAGLE",
+      "default_branch": "main",
+      "pushed_at": "2026-02-20T02:53:29Z",
+      "archived": false,
+      "license": {
+        "key": "other",
+        "name": "Other",
+        "spdx_id": "NOASSERTION",
+        "url": null,
+        "node_id": "MDc6TGljZW5zZTA="
+      },
+      "readme_url": "https://github.com/SafeAILab/EAGLE/blob/main/README.md",
+      "sha": "cb7e0841fe0c206c6ed74a197ad5e2a1f13f5a2b"
+    },
+    {
+      "repo": "unslothai/unsloth",
+      "default_branch": "main",
+      "pushed_at": "2026-10-13T07:27:01Z",
+      "archived": false,
+      "license": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "spdx_id": "Apache-2.0",
+        "url": "https://api.github.com/licenses/apache-2.0",
+        "node_id": "MDc6TGljZW5zZTI="
+      },
+      "readme_url": "https://github.com/unslothai/unsloth/blob/main/README.md",
+      "sha": "428ac984258c242063b16f5a9e60aee4e9ce31a5"
+    },
+    {
+      "repo": "vllm-project/vllm",
+      "default_branch": "main",
+      "pushed_at": "2026-10-13T07:22:59Z",
+      "archived": false,
+      "license": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "spdx_id": "Apache-2.0",
+        "url": "https://api.github.com/licenses/apache-2.0",
+        "node_id": "MDc6TGljZW5zZTI="
+      },
+      "readme_url": "https://github.com/vllm-project/vllm/blob/main/README.md",
+      "sha": "4e4eab73ed2b4e00931a4636e926b8df1cb1fe50"
+    }
+  ],
+  "models": [
+    {
+      "model": "Qwen/Qwen3.8-Flash-Next",
+      "sha": "de4b8e4d43b917e7706784d8bb445c9af86a3540",
+      "lastModified": "2026-08-27T05:03:36.000Z",
+      "url": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next",
+      "license": "other"
+    },
+    {
+      "model": "Qwen/Qwen3-0.6B",
+      "sha": "c1899de289a04d12100db370d81485cdf75e47ca",
+      "lastModified": "2025-07-26T03:46:27.000Z",
+      "url": "https://huggingface.co/Qwen/Qwen3-0.6B",
+      "license": "apache-2.0"
+    },
+    {
+      "model": "google/gemma-4-E2B-it",
+      "sha": "3e22461f65e89153144f8adb70e3b8c2cc9845a7",
+      "lastModified": "2026-07-20T16:41:56.000Z",
+      "url": "https://huggingface.co/google/gemma-4-E2B-it",
+      "license": "apache-2.0"
+    }
+  ]
+}
