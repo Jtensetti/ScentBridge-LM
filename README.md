@@ -6,9 +6,11 @@ Project repository: [Jtensetti/parfumeLM](https://github.com/Jtensetti/parfumeLM
 
 ## Status — 2026-10-13
 
-Architecture review and research plan. No perfume model has been trained. No public dataset has yet been cleared and imported. The first CPU experiment is a small supervised representation baseline; its synthetic smoke test demonstrates execution only, not olfactory accuracy.
+Architecture review plus a trained, experimental text/formula retrieval model. E1 learned a 32-dimensional shared embedding from 3,584 formulas and 84 descriptions covering 28 starting accords. It retrieves catalog entries in both directions; it is not a generative language model. Held-out-family top-1 accuracy was **0% in both directions**, so generalization has not been demonstrated. See [the quantitative intake and E1 report](docs/quantitative-intake-and-e1.md).
 
 A [reference accord intake](docs/reference-data-intake.md) has now been audited against the user-supplied original ZIP: 22 accord concepts, 19 variants, 48 ingredient entries and 40 qualitative reference records. The reviewed local dataset preserves modifier details lost in the original flat export. It contains no personal sensory tests or quantified formulas and remains separate from training and the public repository.
+
+The later quantitative archive is a separate intake: 4,992 formulas and 99,839 generated instruction examples. The user explicitly confirmed that **all formulas, proportions and descriptions were smell-tested and approved**, superseding their old untested flags. This is recorded as user-reported evidence; original files are preserved, and no missing numerical ratings or test protocols are invented. Corrected data and model weights are stored locally; this repository contains code and aggregate results.
 
 ## Read the plan
 

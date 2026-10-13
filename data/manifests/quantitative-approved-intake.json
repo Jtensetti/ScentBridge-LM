@@ -1,0 +1,35 @@
+{
+  "archive_sha256": "828c7be3283e63bf9715be2c74c54761f49a6ab161874f2b2b89a7c180dd1a36",
+  "checksums_verified": 35,
+  "formulas": 4992,
+  "formula_splits": {
+    "train": 3584,
+    "validation": 768,
+    "test": 640
+  },
+  "priors": 39,
+  "prior_splits": {
+    "train": 28,
+    "validation": 6,
+    "test": 5
+  },
+  "families": 21,
+  "sft_records": 99839,
+  "sft_splits": {
+    "train": 71680,
+    "validation": 15360,
+    "test": 12799
+  },
+  "starter_records": 2000,
+  "user_attested_formulas": 4992,
+  "unique_description_texts": 117,
+  "numeric_sensory_ratings_available": false,
+  "attestation_id": "user-confirmation-2026-10-13-all",
+  "sensory_status": "user_reported_smell_tested_and_approved",
+  "raw_data_published": false,
+  "weights_published": false,
+  "language_model_trained": false,
+  "e1_parameters": 32864,
+  "e1_test_text_to_formula_top1": 0.0,
+  "e1_test_formula_to_text_top1": 0.0
+}
