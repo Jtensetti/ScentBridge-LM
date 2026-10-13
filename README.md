@@ -8,6 +8,8 @@ Project repository: [Jtensetti/parfumeLM](https://github.com/Jtensetti/parfumeLM
 
 Architecture review and research plan. No perfume model has been trained. No public dataset has yet been cleared and imported. The first CPU experiment is a small supervised representation baseline; its synthetic smoke test demonstrates execution only, not olfactory accuracy.
 
+A [reference accord intake](docs/reference-data-intake.md) has now been documented: 40 qualitative reference records, with no personal sensory tests or quantified formulas. The original shared-chat downloads were unavailable; a local reconstruction is kept separate from training and the public repository.
+
 ## Read the plan
 
 1. [Original project brief](docs/project-brief.md)
