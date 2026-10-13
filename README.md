@@ -6,7 +6,9 @@ Project repository: [Jtensetti/parfumeLM](https://github.com/Jtensetti/parfumeLM
 
 ## Status — 2026-10-13
 
-Architecture review plus a trained, experimental text/formula retrieval model. E1 learned a 32-dimensional shared embedding from 3,584 formulas and 84 descriptions covering 28 starting accords. It retrieves catalog entries in both directions; it is not a generative language model. Held-out-family top-1 accuracy was **0% in both directions**, so generalization has not been demonstrated. See [the quantitative intake and E1 report](docs/quantitative-intake-and-e1.md).
+**ScentBridge-LM 0.1 is a locally trained generative language model**, based on Qwen3-0.6B, with standalone merged weights and a Swedish local application. It supports grounded text/formula responses using 39 starting accords and exact lookup of 4,992 approved formulas, with deterministic mass calculations. See [the language-model release](docs/language-model-0.1.md) for training, evaluation and scope. Model files and the application bundle are delivered locally; this repository contains the reproducible code.
+
+The earlier E1 experiment learned a small text/formula retrieval embedding but achieved **0% on unseen test families**. That negative result remains valid: the new release uses catalog grounding and does not claim a solution to blind olfactory prediction. See [the quantitative intake and E1 report](docs/quantitative-intake-and-e1.md).
 
 A [reference accord intake](docs/reference-data-intake.md) has now been audited against the user-supplied original ZIP: 22 accord concepts, 19 variants, 48 ingredient entries and 40 qualitative reference records. The reviewed local dataset preserves modifier details lost in the original flat export. It contains no personal sensory tests or quantified formulas and remains separate from training and the public repository.
 
@@ -28,6 +30,8 @@ The later quantitative archive is a separate intake: 4,992 formulas and 99,839 g
 Begin with a versioned material registry, licensed observations, a shared perceptual space and deterministic formula validation. Establish a CPU baseline before a 0.6B language benchmark. Add sparse MoE, dynamic depth and specialized kernels only when controlled experiments demonstrate a benefit.
 
 The first model stack is Python + NumPy for the CPU baseline, then PyTorch + Transformers/PEFT for a small language benchmark. TRL is the selected post-training interface when needed; do not layer Soup and Unsloth on top by default. XGrammar enters with generative formulas. Keep OpenPOM in a separate environment if its molecular features improve results.
+
+The implemented language-model baseline uses PyTorch/Transformers/PEFT with local LoRA training and checked JSON output. The interface retrieves approved catalog references and visibly falls back to the catalog if model output deviates. Free generation remains available separately through `python -m scentbridge.cli --raw`; it is not catalog-validated.
 
 ## Run the initial smoke experiment
 

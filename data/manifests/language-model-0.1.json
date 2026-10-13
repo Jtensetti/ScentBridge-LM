@@ -1,0 +1,38 @@
+{
+  "base-native-test": {
+    "n": 70,
+    "valid_json": 36,
+    "exact_all": 35,
+    "domain_n": 40,
+    "domain_exact": 35,
+    "math_n": 30,
+    "math_exact": 0,
+    "median_seconds": 2.0450189999537542,
+    "tokens_per_second": 43.24732464437532
+  },
+  "scentbridge-native-test": {
+    "n": 70,
+    "valid_json": 70,
+    "exact_all": 48,
+    "domain_n": 40,
+    "domain_exact": 40,
+    "math_n": 30,
+    "math_exact": 8,
+    "median_seconds": 0.37841459992341697,
+    "tokens_per_second": 188.5706839811013
+  },
+  "scentbridge-test": {
+    "n": 70,
+    "valid_json": 70,
+    "exact_all": 48,
+    "domain_n": 40,
+    "domain_exact": 40,
+    "math_n": 30,
+    "math_exact": 8,
+    "median_seconds": 2.9785557000432163,
+    "tokens_per_second": 1.625251362452242
+  },
+  "native_engine": "llama.cpp b11429 Q8_0",
+  "evaluation_context": "Approved reference fields supplied in paired prompts; not blind olfactory prediction",
+  "unit_tests_passed": 21
+}

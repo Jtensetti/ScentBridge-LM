@@ -1,0 +1,3 @@
+-r requirements-lm.txt
+sentencepiece==0.2.1
+# gguf/conversion code is imported from the pinned llama.cpp b11429 checkout.
