@@ -1,33 +1,84 @@
 {
-  "manifest_version": "1",
+  "manifest_version": "2",
   "intake_date": "2026-10-13",
   "source_url": "https://chatgpt.com/share/6acde69b-1dec-83ed-886f-563cc7bc33f8",
   "source_title": "Strukturera parfymdataset",
   "evidence_class": "reference_untested",
   "user_tested": false,
   "rights_status": "unresolved",
-  "original_files_downloaded": false,
-  "representation": "local_reconstruction_from_visible_factual_relationships",
+  "original_files_obtained": true,
+  "acquisition": "user_supplied_local_zip",
+  "archive_filename": "doftackord_svenska_dataset.zip",
+  "archive_sha256": "6a50ebc26d7c02bf47ce8f37903003e3ccc093bd9685b266e0364e6443e2c1fa",
+  "original_members": [
+    {
+      "name": "doftackord_README.md",
+      "bytes": 2237,
+      "sha256": "1874cd9f0d0dfedb26c2edd5a3d966c313969b09e1d9261632a4f2e5788b2f68"
+    },
+    {
+      "name": "doftackord_dataset_sv.json",
+      "bytes": 56111,
+      "sha256": "7489ab5ddcf798bb0614319d01f3c96bf6f834119e25747cd7e21731d5ee1004"
+    },
+    {
+      "name": "doftackord_formelpar_sv.jsonl",
+      "bytes": 24197,
+      "sha256": "6cb11da063e94c9ecae6916b8538beefbae583a82bddec61e50767107a324ff3"
+    },
+    {
+      "name": "doftackord_svensk_oversattning.md",
+      "bytes": 9196,
+      "sha256": "709c5fa1892b43a0932e514cabe9c7e9bf1e0732cdd42020b92d2a6285f7298a"
+    }
+  ],
+  "representation": "reviewed_original_archive_with_reconstruction_crosswalk",
   "public_raw_data_included": false,
   "training_admission": "excluded",
   "e0_admission": "excluded",
   "counts": {
-    "concepts": 22,
-    "qualitative_combinations": 24,
-    "modifier_or_variant_records": 16,
-    "records": 40,
-    "source_material_mentions": 50,
-    "alias_candidate_pairs": 2,
-    "measured_observations": 0,
-    "complete_quantified_formulas": 0,
+    "main_accords": 22,
+    "nested_variants": 19,
+    "source_ingredients": 48,
+    "flat_records": 40,
+    "matched_reconstructed_records": 40,
+    "matched_reconstructed_material_labels": 50,
+    "e0_eligible": 0,
     "training_eligible": 0,
-    "e0_eligible": 0
+    "personal_sensory_observations": 0
   },
-  "local_reconstructed_dataset_sha256": "a76f44282c8751d6bc135ba5b3ec5e3023e86b6c42665a1fcb35a50f4ab24c54",
-  "blocked_by": [
-    "Original generated files unavailable through share link",
-    "Original publication and rights unresolved",
-    "No amounts, observed ratings or measurement context"
+  "local_reviewed_dataset_sha256": "fa848df1d6882426714c7230f36972ca9619ce03f7a6e61a03251e8f56b25bb5",
+  "checks": {
+    "zip_crc_valid": true,
+    "utf8_valid": true,
+    "unique_ids": true,
+    "nested_flat_ingredient_parity": true,
+    "unknown_ingredient_references": 0,
+    "reconstruction_records_matched": 40,
+    "original_copies_byte_identical": true
+  },
+  "review_findings": [
+    "alias_merges",
+    "ganache_trace",
+    "lily_optional",
+    "dry_fig_operation",
+    "label_scope",
+    "identity_claims"
   ],
-  "all_records_share_source_group": true
+  "remaining_gaps": [
+    "Original publication and rights unresolved",
+    "No amounts, observed ratings or measurement context",
+    "Source chemistry and regulatory claims require independent review"
+  ],
+  "all_records_share_source_group": true,
+  "history": [
+    {
+      "stage": "shared_link",
+      "status": "download_controls_failed; visible content reconstructed"
+    },
+    {
+      "stage": "user_supplied_zip",
+      "status": "four original files inspected and compared"
+    }
+  ]
 }
